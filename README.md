@@ -1,1 +1,18 @@
-# Capstone
+Problem Statement:
+
+This capstone project gave 3 different tasks with the option to choose one with the purpose of using everything we have learn in class. I chose the Air/train/bus reservation system which tasked me to make a traveling system/interface that has multiple different features such as multi-trip seat inventory, passenger booking lifecycle, waitlists, and availability reporting. This system also needed to use a client and server to communicate over a TCP connection as well as a way to save data after closing the system so it is there when you bring it back.
+
+Design and Architecture Details:
+
+This project is split up into multiple different files including main.c, client.c, server.c, seatmap.c(h), and storage.c(h). each of these are used to make the system function properly. For key data structures, they are defined in the seatmap.h file and contain Seat, Trip, SeatMap, and Waitlist. These structures store information such as seat availability/status, passengers waiting for a seat(waitlist), as well as trip details. seatmap.c intializes the functions and handles the waitlist, reservation updates, etc. For database persistence strategy, storage.c(h) handles saving and loading the data in between sessions. The system uses a file called reservation_data.bin which stores the information when the system shuts down. It also uses a temporary file when saving updated changes bore changing the main data file to ensure that there are no errors with the main file. Lastly for the networking protocal, server.c creates a TCP server that listens on port 8080 which client.c connects to and sends commands. These commands are a collection of all the functions in the other files and is a quick way to exucute those functions. The commands are List(shows seat and trip info), Hold(holds a seat), Confirm(confirms a seat), cancel(cancel a seat), waitlist(adds a passenger to a trips waitlist).
+
+Pros and Cons:
+For the pros, the main ones are that the system saves data in between sessions, uses file locking to limit errors and protect the data, and is easier to read and understand since its split into header and source. It also is very user friendly as the client-server design allows for users to execute multiple functions at once and also allows for quick navigation. For the cons the main one is that the code only is made for the predefined limitations. By that I mean that the system only supports the three different trips with the predefined limits for things like waitlist and seats. If you wanted to add another trip of a form of transportation with more seats you would have to edit the entire system itself. Not only that but while saving the information to a binary file is simple and efficient, it could very easily lead to issues where data becomes unusable if there are any updates to the system.
+
+AI Audit reflection:
+For the prompts used, I simply gave the AI my code and then gave it the requirements under the "Architectural Verification:" section. I then gave it the section next to "Concurrency & Leak Audit:" and from there it created its audit. Where it mainly helped out was with file-locking as it found my code was weak when it came to preventing multiple request from changing the saved data at once. It helped me by recommending I use file locking as it stops any errors cause by two commands editing the data at the same time and also stops the commands from overwriting each other causing incorrect data to be saved.
+
+
+Video Link/download:
+
+
