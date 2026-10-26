@@ -15,4 +15,6 @@ For the prompts used, I simply gave the AI my code and then gave it the requirem
 
 Video Link/download:
 
+https://wetransfer.com/downloads/9e3d3b086a030ef2e9cfd0af46864b0b20261026045159/55794175cca5ffccab2e49b81e44432f20261026045301/c27a62?t_exp=1793249519&t_lsid=cc078a07-4170-45bd-afdf-8ac3c22f8094&t_network=email&t_rid=Z29vZ2xlLW9hdXRoMnwxMDE2MTk3NDEwNzQyNjM2OTcxNjc%3D&t_s=download_link&t_ts=1792990319&utm_source=wt_sendgrid&utm_medium=email&utm_campaign=TRN_DL_WTP_01&trk=TRN_DL_WTP_01
 
+(The video is too big to upload and I dont know how to get Kaltura video so I just had a website convert the video into an install link, sorry!!!)
